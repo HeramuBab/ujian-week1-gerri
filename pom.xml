@@ -36,10 +36,10 @@
   
   <properties>
     <!-- Set Java source/target to Java 25 -->
-    <maven.compiler.source>25</maven.compiler.source>
-    <maven.compiler.target>25</maven.compiler.target>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
     <!-- Ensure plugins use the same release where supported -->
-    <maven.compiler.release>25</maven.compiler.release>
+    <maven.compiler.release>8</maven.compiler.release>
   </properties>
 
   <build>
@@ -50,7 +50,7 @@
         <version>3.11.0</version>
         <configuration>
           <!-- Prefer `release` when available to set bootclasspath appropriately -->
-          <release>25</release>
+          <release>8</release>
         </configuration>
       </plugin>
       <plugin>
