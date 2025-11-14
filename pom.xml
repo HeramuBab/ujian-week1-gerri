@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.juaracoding.labs</groupId>
+  <artifactId>java-labs</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>java-labs</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.14</version>
+</dependency>
+  
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.9</version>
+    </dependency>
+    
+    <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.17.0</version> <!-- Use latest stable version -->
+</dependency>
+  </dependencies>
+  
+  <properties>
+    <!-- Set Java source/target to Java 25 -->
+    <maven.compiler.source>25</maven.compiler.source>
+    <maven.compiler.target>25</maven.compiler.target>
+    <!-- Ensure plugins use the same release where supported -->
+    <maven.compiler.release>25</maven.compiler.release>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <!-- Prefer `release` when available to set bootclasspath appropriately -->
+          <release>25</release>
+        </configuration>
+      </plugin>
+      <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.6.2</version> <!-- Use the latest version -->
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>exec</goal> <!-- Or 'exec' for external programs -->
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <mainClass>com.juaracoding.labs.UjianWeek1</mainClass> <!-- Required for 'java' goal -->
+                <!-- For 'exec' goal, use <executable> and <arguments> -->
+                <!-- <executable>your-external-command</executable> -->
+                <!-- <arguments> -->
+                <!-- <argument>arg1</argument> -->
+                <!-- <argument>arg2</argument> -->
+                <!-- </arguments> -->
+            </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
